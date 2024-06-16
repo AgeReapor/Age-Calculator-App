@@ -273,9 +273,9 @@ h2{
 
 h2:hover{
     color: var(--smokey-grey);
+    cursor: default;
 
     span{
-
         letter-spacing: .01em;
     }
 }
