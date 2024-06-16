@@ -215,7 +215,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     100%{
-        background-position-y: 1.4em;
+        background-position-y: 1.5vh;
     }
 }
 
@@ -242,7 +242,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     100%{
-        background-position-y: 1.8em;
+        background-position-y: calc(12vh-1rem);
     }
 }
 
@@ -293,8 +293,6 @@ h2:hover{
 div:has(.output[done="0"]) h2{
     color: var(--off-black);
 }
-
-
 
 .attribution {
     font-size: 11px; text-align: center;
