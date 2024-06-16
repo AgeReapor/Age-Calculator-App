@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+  <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+  
+  <div class="container">
+    <form onsubmit="getDateData(event)">
+    
+      <div class="input-wrapper">
+        <div class="input-box">
+          <h4>DAY</h4>
+          <input type="number" name="day" placeholder="DD" onchange="fixLeadingZeros(this,2)" maxlength="2">
+          <span class="error" id="day-error"></span>
+        </div>
+        <div class="input-box">
+          <h4>MONTH</h4>
+          <input type="number" name="month" placeholder="MM" onchange="fixLeadingZeros(this,2)">
+          <span class="error" id="month-error"></span>
+        </div>
+        <div class="input-box">
+          <h4>YEAR</h4>
+          <input type="number" name="year" placeholder="YYYY" onchange="fixLeadingZeros(this,4)" maxlength="4">
+          <span class="error" id="year-error"></span>
+        </div>
+      </div>
+
+      <div class="divider">
+        <div class="line"></div>
+        <button id="calculate-btn"></button>
+      </div>
+
+      <div class="output-wrapper">
+        <div class="output-box">
+          <h2><span c id="year-no" target="0" current="0" done="1" class="output">- -</span>years</h2>
+        </div>
+        <div class="output-box">
+          <h2><span id="month-no" target="0" current="0" done="1" class="output">- -</span>months</h2>
+        </div>
+        <div class="output-box">
+          <h2><span id="day-no" target="0" current="0" done="1" class="output">- -</span>days</h2>
+        </div>
+      </div>
+    
+    </form>
+
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/AgeReapor">Age Reapor</a>.
+  </div>
+
+  <script src="assets/scripts/script.js"></script>
+</body>
+</html>

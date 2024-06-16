@@ -1,0 +1,372 @@
+@font-face {
+    font-family: 'Poppins Regular';
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins Bold';
+    src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins ExtraBold';
+    src: url( '../fonts/Poppins-ExtraBold.ttf') format('truetype');
+}
+
+
+:root{
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+
+    --font-size-regular: 32px;
+    --font-size-small: .4em;
+    --font-size-large: 3em;
+
+    --button-img: url('../images/icon-arrow.svg');
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins Regular', sans-serif;
+    font-size: var(--font-size-regular);
+
+    background-color: var(--off-white);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+/* Component Container */
+.container {
+    width: 720px;
+    
+    padding: 1.5em;
+    background-color: var(--white);
+
+    border-radius: 1em 1em 5em 1em;
+}
+
+form{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100%;
+}
+
+/* Top Bar */
+.input-wrapper{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+
+    gap: 1em;
+}
+
+/* Top Bar Columns */
+.input-box{
+    display: flex;
+    flex-direction: column;
+    gap: .2em;
+}
+
+/* DAY, MONTH, YEAR */
+h4 {
+    font-family: 'Poppins Bold', sans-serif;
+    font-size: var(--font-size-small);
+    color: var(--smokey-grey);
+    letter-spacing: .2rem;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* Input Boxes */
+input{
+
+    max-width: 10em;
+    width: 100%;
+    
+    font-family: 'Poppins Bold', sans-serif;
+    font-size: var(--font-size-regular);
+
+    padding: .2em .5em .2em .5em;
+
+    border-color: var(--light-grey);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: .2em;
+}
+
+input:hover{
+    cursor: pointer;
+    background-color: var(--light-grey);
+    border-color: var(--purple);
+}
+
+input:focus{
+    outline: none !important;
+    background-color: white;
+    border-color: var(--purple);
+    caret-color: var(--purple);
+}
+
+
+/* removes spinbox */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* Error Messages */
+.error{
+    content: '';
+    
+    height: 2rem;
+    width: 100%;
+
+    color: var(--light-red);
+    font-family: 'Poppins Regular', sans-serif;
+    font-size: var(--font-size-small);
+    font-style: italic;
+
+}
+
+.divider{
+    display: grid;
+    width: 100%;
+    height: 5rem;
+
+    position: relative;
+    margin-top: -2rem;
+}
+
+.line{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: var(--light-grey);
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+}
+
+/* Button */
+#calculate-btn{
+
+    justify-self: right;
+
+    width: 5rem;
+    height: 5rem;
+
+    background-color: var(--purple);
+    border: none;
+    border-radius: 50%;
+
+    background-image: var(--button-img);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+
+    position: absolute;
+    z-index: 1;
+}
+
+/* Button Hover Animation */
+@keyframes rollover {
+    0%{
+        background-position-y: 0;
+    }
+
+    40%{
+        background-position-y: 7em;
+    }
+    
+    49%{
+        background-image: none;
+    }
+    
+    50%{
+        background-position-y: -7em;
+    }
+
+    51%{
+        background-image: var(--button-img);
+    }
+
+    100%{
+        background-position-y: 1.4em;
+    }
+}
+
+/* Button Hover Animation */
+@keyframes rollover_scaled {
+    0%{
+        background-position-y: 0;
+    }
+
+    40%{
+        background-position-y: 7em;
+    }
+    
+    49%{
+        background-image: none;
+    }
+    
+    50%{
+        background-position-y: -7em;
+    }
+
+    51%{
+        background-image: var(--button-img);
+    }
+
+    100%{
+        background-position-y: 1.8em;
+    }
+}
+
+
+#calculate-btn:hover{
+    animation: rollover .5s 1 cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+
+
+#calculate-btn:active{
+    background-color: var(--off-black);
+}
+
+/* Output Text*/
+h2{
+    font-family: 'Poppins ExtraBold', sans-serif;
+    font-style: italic;
+    font-size: var(--font-size-large);
+    line-height: 1.1em;
+    
+    margin: 0;
+    padding: 0;
+
+    span{
+        padding-right: .1em;
+    }
+}
+
+h2:hover{
+    color: var(--smokey-grey);
+
+    span{
+
+        letter-spacing: .01em;
+    }
+}
+
+/* Output colors indicating status */
+.output[done="1"]{
+    color: var(--purple);
+}
+
+.output[done="0"]{
+    color: var(--smokey-grey);
+}
+
+.attribution {
+    font-size: 11px; text-align: center;
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-height: 680px) {
+    .attribution{
+        position: static;
+        transform: none;
+        margin-top: 4em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container{
+        width: 90%;
+        margin-top: 10rem;
+    }
+
+    .input-wrapper{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .input-box{
+        width: 100%;
+    }
+
+    .input{
+        width: 100% !important;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .divider{
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+
+    #calculate-btn{
+        background-size: 40%;
+    }
+
+    
+    #calculate-btn:hover{
+        animation: rollover_scaled .5s 1 cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+    }
+
+    .error{
+        text-align: center;
+    }
+
+    #calculate-btn{
+        justify-self: center;
+    }
+
+    h2{
+        font-size: 13vw;
+    }
+
+    .output-wrapper{
+        width: 100%;
+    }
+
+    .attribution{
+        width: 100%;
+        position: static;
+        margin-top: 4em;
+        left: 0%;
+        transform: translateX(0);
+        z-index: -1;
+    }
+
+}
