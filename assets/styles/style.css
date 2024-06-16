@@ -316,9 +316,13 @@ div:has(.output[done="0"]) h2{
 }
 
 @media screen and (max-width: 800px) {
+    body{
+        justify-content: flex-start;
+    }
+
     .container{
         width: 90%;
-        margin-top: 10rem;
+        margin-top: 20vw;
         padding: 10vw;
         border-radius: 1rem 1rem 20vw 1rem; 
     }
