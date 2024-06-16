@@ -285,9 +285,16 @@ h2:hover{
     color: var(--purple);
 }
 
+
 .output[done="0"]{
     color: var(--smokey-grey);
 }
+
+div:has(.output[done="0"]) h2{
+    color: var(--off-black);
+}
+
+
 
 .attribution {
     font-size: 11px; text-align: center;
@@ -312,34 +319,45 @@ h2:hover{
     .container{
         width: 90%;
         margin-top: 10rem;
+        padding: 10vw;
+        border-radius: 1rem 1rem 20vw 1rem; 
     }
 
     .input-wrapper{
-        width: 100%;
+        width: fit-content;
         align-items: center;
         justify-content: center;
+        gap: 3vw;
     }
+
 
     .input-box{
-        width: 100%;
+        width: fit-content;
+        font-size: 5vw
     }
 
-    .input{
-        width: 100% !important;
+    input{
         min-width: 0;
-        flex: 1;
+        font-size: 5vw;
+        padding: 1vw 2vw;
+    }
+
+    .error{
+        height: 5vw;
     }
 
     .divider{
         margin-top: 0;
-        margin-bottom: 3rem;
+        margin-bottom: 3vw;
+        height: 12vw;
     }
 
     #calculate-btn{
+        width: 12vw;
+        height: 12vw;
         background-size: 40%;
     }
 
-    
     #calculate-btn:hover{
         animation: rollover_scaled .5s 1 cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
     }
@@ -353,7 +371,7 @@ h2:hover{
     }
 
     h2{
-        font-size: 13vw;
+        font-size: calc(12vw - .3rem);
     }
 
     .output-wrapper{
