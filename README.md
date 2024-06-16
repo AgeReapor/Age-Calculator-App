@@ -41,8 +41,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: To be added
-- Live Site URL: To be added
+- Solution URL: [Github](https://github.com/AgeReapor/Age-Calculator-App/)
+- Live Site URL: [Vercel](https://age-calculator-app-one-wheat.vercel.app/)
 
 ## My process
 
